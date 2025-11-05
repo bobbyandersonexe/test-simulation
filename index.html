@@ -13,26 +13,27 @@
         <p>Вершины ткани зафиксированы, движение центрального узла по синусоиде</p>
         <div class="controls">
             <label>
-                <input type="checkbox" id="autoRotate" checked> Авто вращение
+                <input type="checkbox" id="autoRotate" checked> Auto Rotation
             </label>
             <label>
-                Скорость вращения:
+                Rotation Speed:
                 <input type="range" id="rotationSpeed" min="0" max="2" step="0.1" value="1">
             </label>
             <label>
-                Расстояние до камеры:
+                Camera Distance:
                 <input type="range" id="cameraDistance" min="300" max="1000" step="50" value="600">
             </label>
-            <button id="resetView">Сбросить вид</button>
+            <button id="resetView">Reset View</button>
         </div>
         <div class="stats">
-            <div>Вершины: <span id="vertexCount">0</span></div>
-            <div>Треугольники: <span id="triangleCount">0</span></div>
+            <div>Vertices: <span id="vertexCount">0</span></div>
+            <div>Triangles: <span id="triangleCount">0</span></div>
             <div>FPS: <span id="fps">0</span></div>
-            <div>Вид: <span id="viewMode">3D Перспектива</span></div>
+            <div>View: <span id="viewMode">3D Perspective</span></div>
         </div>
     </div>
     <script type="module" src="script.js"></script>
 </body>
 
 </html>
+
