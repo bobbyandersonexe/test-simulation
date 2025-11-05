@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0c0c1a 0%, #0a1226 100%);
+    overflow: hidden;
+    color: white;
+}
+
+#canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+#canvas:active {
+    cursor: grabbing;
+}
+
+.info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 300px;
+}
+
+.info h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #64ffda;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+.info p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.controls {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.controls label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.controls input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.controls input[type="range"] {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.controls button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    background: #64ffda;
+    color: #0c0c1a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.controls button:hover {
+    background: #80ffdf;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stats div {
+    font-size: 0.8em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats span {
+    color: #4be0bd;
+    font-weight: bold;
+}
