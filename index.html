@@ -3,37 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Симуляция ткани - 3D вид</title>
+    <title>WebGPU Cloth Simulation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <canvas id="canvas"></canvas>
     <div class="info">
-        <h1>3D Симуляция ткани</h1>
-        <p>Вершины ткани зафиксированы, движение центрального узла по синусоиде</p>
+        <h1>WebGPU Cloth Simulation</h1>
+        <p>PBD with WebGPU rendering</p>
         <div class="controls">
-            <label>
-                <input type="checkbox" id="autoRotate" checked> Auto Rotation
-            </label>
-            <label>
-                Rotation Speed:
-                <input type="range" id="rotationSpeed" min="0" max="2" step="0.1" value="1">
-            </label>
-            <label>
-                Camera Distance:
-                <input type="range" id="cameraDistance" min="300" max="1000" step="50" value="600">
-            </label>
-            <button id="resetView">Reset View</button>
+            <!-- Gravity Control -->
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="gravity" checked> 
+                    Gravity: <span id="gravityValue">ON</span>
+                </label>
+            </div>
+            
+            <!-- PBD Controls -->
+            <div class="control-section">
+                <h3>PBD Parameters</h3>
+                <div id="pbdControls"></div>
+            </div>
+            
+            <!-- Oscillation Controls -->
+            <div class="control-section">
+                <h3>Oscillation</h3>
+                <div id="oscillationControls"></div>
+            </div>
+            
+            <!-- Lighting Controls -->
+            <div class="control-section">
+                <h3>Lighting</h3>
+                <div id="lightingControls"></div>
+            </div>
+            
+            <!-- Camera Controls -->
+            <div class="control-section">
+                <h3>Camera</h3>
+                <div class="control-group">
+                    <label>
+                        Auto Rotate:
+                        <input type="checkbox" id="autoRotate" checked>
+                    </label>
+                </div>
+                
+                <div class="control-group">
+                    <label>
+                        Rotation Speed:
+                        <input type="range" id="rotationSpeed" min="0" max="2" step="0.1" value="0.5">
+                    </label>
+                </div>
+                
+                <div class="control-group">
+                    <label>
+                        Camera Distance:
+                        <input type="range" id="cameraDistance" min="300" max="1000" step="50" value="600">
+                    </label>
+                </div>
+            </div>
+            
+            <button id="resetView">Reset All Parameters</button>
         </div>
         <div class="stats">
             <div>Vertices: <span id="vertexCount">0</span></div>
             <div>Triangles: <span id="triangleCount">0</span></div>
             <div>FPS: <span id="fps">0</span></div>
-            <div>View: <span id="viewMode">3D Perspective</span></div>
+            <div>View: <span id="viewMode">Isometric View</span></div>
         </div>
     </div>
     <script type="module" src="script.js"></script>
 </body>
-
 </html>
-
